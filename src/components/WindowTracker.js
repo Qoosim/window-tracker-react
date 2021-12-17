@@ -1,8 +1,17 @@
 import React from 'react';
 
 function WindowTracker() {
+
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+
+  React.useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWindowWidth(window.innerWidth)
+    });
+  }, [])
+
   return (
-    <h1>Window width: {window.innerWidth}</h1>
+    <h1>Window width: {windowWidth}</h1>
   )
 }
 
