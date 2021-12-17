@@ -8,10 +8,13 @@ function WindowTracker() {
     function watchWidth() {
       setWindowWidth(window.innerWidth)
     }
+
     window.addEventListener('resize', watchWidth);
+
     return function() {
       window.removeEventListener('resize', watchWidth);
     }
+
   }, [])
 
   return (
